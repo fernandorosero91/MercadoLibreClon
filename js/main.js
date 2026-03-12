@@ -167,3 +167,250 @@ window.addEventListener('load', function() {
     startAutoPlay();
     console.log('Carousel initialized successfully!');
 });
+
+
+// Offers scroll functionality
+window.addEventListener('load', function() {
+    const offersScroll = document.querySelector('.offers-scroll');
+    const offersPrev = document.getElementById('offersPrev');
+    const offersNext = document.getElementById('offersNext');
+    
+    if (offersScroll && offersPrev && offersNext) {
+        offersPrev.addEventListener('click', function() {
+            offersScroll.scrollBy({
+                left: -240,
+                behavior: 'smooth'
+            });
+        });
+        
+        offersNext.addEventListener('click', function() {
+            offersScroll.scrollBy({
+                left: 240,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update button visibility
+        function updateOffersButtons() {
+            const scrollLeft = offersScroll.scrollLeft;
+            const maxScroll = offersScroll.scrollWidth - offersScroll.clientWidth;
+            
+            offersPrev.style.opacity = scrollLeft > 0 ? '1' : '0.3';
+            offersPrev.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none';
+            
+            offersNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0.3';
+            offersNext.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+        }
+        
+        offersScroll.addEventListener('scroll', updateOffersButtons);
+        updateOffersButtons();
+    }
+});
+
+// Best Sellers scroll functionality
+window.addEventListener('load', function() {
+    const bestSellersScroll = document.querySelector('.best-sellers-scroll');
+    const bestSellersPrev = document.getElementById('bestSellersPrev');
+    const bestSellersNext = document.getElementById('bestSellersNext');
+    
+    if (bestSellersScroll && bestSellersPrev && bestSellersNext) {
+        bestSellersPrev.addEventListener('click', function() {
+            bestSellersScroll.scrollBy({
+                left: -240,
+                behavior: 'smooth'
+            });
+        });
+        
+        bestSellersNext.addEventListener('click', function() {
+            bestSellersScroll.scrollBy({
+                left: 240,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update button visibility
+        function updateBestSellersButtons() {
+            const scrollLeft = bestSellersScroll.scrollLeft;
+            const maxScroll = bestSellersScroll.scrollWidth - bestSellersScroll.clientWidth;
+            
+            bestSellersPrev.style.opacity = scrollLeft > 0 ? '1' : '0.3';
+            bestSellersPrev.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none';
+            
+            bestSellersNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0.3';
+            bestSellersNext.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+        }
+        
+        bestSellersScroll.addEventListener('scroll', updateBestSellersButtons);
+        updateBestSellersButtons();
+    }
+});
+
+// Update offers scroll to use new class
+window.addEventListener('load', function() {
+    const offersScroll = document.querySelector('.offers-scroll-main');
+    const offersPrev = document.getElementById('offersPrev');
+    const offersNext = document.getElementById('offersNext');
+    
+    if (offersScroll && offersPrev && offersNext) {
+        offersPrev.addEventListener('click', function() {
+            offersScroll.scrollBy({
+                left: -240,
+                behavior: 'smooth'
+            });
+        });
+        
+        offersNext.addEventListener('click', function() {
+            offersScroll.scrollBy({
+                left: 240,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Update button visibility
+        function updateOffersButtons() {
+            const scrollLeft = offersScroll.scrollLeft;
+            const maxScroll = offersScroll.scrollWidth - offersScroll.clientWidth;
+            
+            offersPrev.style.opacity = scrollLeft > 0 ? '1' : '0.3';
+            offersPrev.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none';
+            
+            offersNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0.3';
+            offersNext.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+        }
+        
+        offersScroll.addEventListener('scroll', updateOffersButtons);
+        updateOffersButtons();
+    }
+});
+
+// Sample developer portfolios data
+const developers = [
+    {
+        name: "Felipe Narvaes",
+        role: "Full Stack Developer",
+        description: "Especializado en desarrollo web moderno con experiencia en aplicaciones escalables.",
+        services: [
+            "Desarrollo Frontend",
+            "Desarrollo Backend",
+            "Diseño de APIs REST"
+        ],
+        technologies: ["JavaScript", "React", "Node.js", "MongoDB"],
+        github: "https://github.com/dev1",
+        portfolio: "portafolio/dev1/index.html"
+    },
+    {
+        name: "Fernando Rosero",
+        role: "Frontend Developer & UI/UX Designer",
+        description: "Experto en crear interfaces de usuario atractivas y responsivas.",
+        services: [
+            "Diseño UI/UX",
+            "Desarrollo React",
+            "Optimización Web"
+        ],
+        technologies: ["HTML", "CSS", "JavaScript", "Vue.js"],
+        github: "https://github.com/dev2",
+        portfolio: "portafolio/dev2/index.html"
+    },
+    {
+        name: "Nicol Muñoz",
+        role: "Backend Developer & Database Specialist",
+        description: "Especialista en arquitectura de servidores y bases de datos.",
+        services: [
+            "Desarrollo de APIs",
+            "Gestión de Bases de Datos",
+            "Arquitectura Cloud"
+        ],
+        technologies: ["Python", "Django", "PostgreSQL", "AWS"],
+        github: "https://github.com/dev3",
+        portfolio: "portafolio/dev3/index.html"
+    },
+    {
+        name: "Yeraldin Araujo",
+        role: "DevOps Engineer & Cloud Architect",
+        description: "Enfocado en automatización, CI/CD y gestión de infraestructura.",
+        services: [
+            "Automatización",
+            "CI/CD Pipelines",
+            "Gestión de Contenedores"
+        ],
+        technologies: ["Docker", "Kubernetes", "Jenkins", "Terraform"],
+        github: "https://github.com/dev4",
+        portfolio: "portafolio/dev4/index.html"
+    }
+];
+
+// Function to create portfolio cards
+function createPortfolioCard(dev, index) {
+    const initials = dev.name.split(' ').map(n => n.charAt(0)).join('');
+    const colors = [
+        'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+        'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+        'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)'
+    ];
+    
+    return `
+        <div class="portfolio-card">
+            <div class="portfolio-avatar" style="background: ${colors[index]}">
+                ${initials}
+            </div>
+            <h3>${dev.name}</h3>
+            <p class="portfolio-role">${dev.role}</p>
+            <p class="portfolio-description">${dev.description}</p>
+            
+            <div class="portfolio-services">
+                <h4>Servicios</h4>
+                <ul>
+                    ${dev.services.map(service => `<li>• ${service}</li>`).join('')}
+                </ul>
+            </div>
+            
+            <div class="portfolio-tech">
+                <h4>Tecnologías</h4>
+                <div class="tech-tags">
+                    ${dev.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                </div>
+            </div>
+            
+            <div class="portfolio-actions">
+                <a href="${dev.portfolio}" class="portfolio-btn portfolio-view">Ver Portafolio</a>
+                <a href="${dev.github}" class="portfolio-btn portfolio-github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    `;
+}
+
+// Load portfolios on page load
+window.addEventListener('load', function() {
+    console.log('Loading portfolios and setting up navigation...');
+    
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    
+    if (portfolioGrid) {
+        portfolioGrid.innerHTML = developers.map((dev, index) => createPortfolioCard(dev, index)).join('');
+    }
+    
+    // Search functionality
+    const searchInput = document.querySelector('.search-input');
+    const searchButton = document.querySelector('.search-button');
+    
+    if (searchButton) {
+        searchButton.addEventListener('click', function() {
+            const searchTerm = searchInput.value.trim();
+            if (searchTerm) {
+                alert(`Buscando: ${searchTerm}`);
+            }
+        });
+    }
+    
+    if (searchInput) {
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+                    alert(`Buscando: ${searchTerm}`);
+                }
+            }
+        });
+    }
+});
