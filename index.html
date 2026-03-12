@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Libre Colombia - Envíos Gratis en el día</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="header-row-1">
+                    <div class="logo">
+                        <img src="img/logoMercadoLibre.png" alt="Mercado Libre" class="logo-img">
+                    </div>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar productos, marcas y más..." class="search-input">
+                        <button class="search-button">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M14.2939 12.5786H13.3905L13.0703 12.2699C14.191 10.9663 14.8656 9.27387 14.8656 7.43282C14.8656 3.32762 11.538 0 7.43282 0C3.32762 0 0 3.32762 0 7.43282C0 11.538 3.32762 14.8656 7.43282 14.8656C9.27387 14.8656 10.9663 14.191 12.2699 13.0703L12.5786 13.3905V14.2939L18.2962 20L20 18.2962L14.2939 12.5786ZM7.43282 12.5786C4.58548 12.5786 2.28702 10.2802 2.28702 7.43282C2.28702 4.58548 4.58548 2.28702 7.43282 2.28702C10.2802 2.28702 12.5786 4.58548 12.5786 7.43282C12.5786 10.2802 10.2802 12.5786 7.43282 12.5786Z" fill="#333"/>
+                            </svg>
+                        </button>
+                    </div>
+                   
+                </div>
+                
+                <div class="header-row-2">
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <div class="location">
+                        <svg width="14" height="18" viewBox="0 0 14 18" fill="none">
+                            <path d="M7 0C3.13 0 0 3.13 0 7C0 12.25 7 18 7 18C7 18 14 12.25 14 7C14 3.13 10.87 0 7 0ZM7 9.5C5.62 9.5 4.5 8.38 4.5 7C4.5 5.62 5.62 4.5 7 4.5C8.38 4.5 9.5 5.62 9.5 7C9.5 8.38 8.38 9.5 7 9.5Z" fill="rgba(0,0,0,.55)"/>
+                        </svg>
+                        <span>Enviar a</span>
+                        <strong>Pasto</strong>
+                    </div>
+                    
+                    <nav class="header-nav">
+                        <a href="#">Categorías</a>
+                        <a href="#ofertas">Ofertas</a>
+                        <a href="#">Cupones</a>
+                        <a href="#">Supermercado</a>
+                        <a href="#">Moda</a>
+                        <div class="nav-dropdown">
+                            <a href="#dev-portfolio" class="nav-dropdown-toggle">Nuestro Equipo</a>
+                            <div class="nav-dropdown-menu">
+                                <a href="portafolio/dev1/index.html">Felipe Narvaes</a>
+                                <a href="portafolio/dev2/index.html">Fernando Rosero</a>
+                                <a href="portafolio/dev3/index.html">Nicol Muñoz</a>
+                                <a href="portafolio/dev4/index.html">Yeraldin Araujo</a>
+                            </div>
+                        </div>
+                        <a href="#">Vender</a>
+                        <a href="#">Ayuda / PQR</a>
+                    </nav>
+                    
+                    <div class="header-actions">
+                        <a href="#" class="header-link">Crea tu cuenta</a>
+                        <a href="#" class="header-link">Ingresa</a>
+                        <a href="#" class="header-link">Mis compras</a>
+                        <a href="#" class="cart-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 18C5.9 18 5.01 18.9 5.01 20C5.01 21.1 5.9 22 7 22C8.1 22 9 21.1 9 20C9 18.9 8.1 18 7 18ZM1 2V4H3L6.6 11.59L5.25 14.04C5.09 14.32 5 14.65 5 15C5 16.1 5.9 17 7 17H19V15H7.42C7.28 15 7.17 14.89 7.17 14.75L7.2 14.63L8.1 13H15.55C16.3 13 16.96 12.59 17.3 11.97L20.88 5.48C20.96 5.34 21 5.17 21 5C21 4.45 20.55 4 20 4H5.21L4.27 2H1ZM17 18C15.9 18 15.01 18.9 15.01 20C15.01 21.1 15.9 22 17 22C18.1 22 19 21.1 19 20C19 18.9 18.1 18 17 18Z" fill="rgba(51,51,51,.7)"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <strong>Menú</strong>
+            <button class="mobile-nav-close" id="mobileNavClose" aria-label="Cerrar menú">&times;</button>
+        </div>
+        <div class="mobile-nav-links">
+            <a href="#">Categorías</a>
+            <a href="#ofertas">Ofertas</a>
+            <a href="#">Cupones</a>
+            <a href="#">Supermercado</a>
+            <a href="#">Moda</a>
+            <a href="#">Vender</a>
+            <a href="#">Ayuda / PQR</a>
+            <a href="#">Crea tu cuenta</a>
+            <a href="#">Ingresa</a>
+            <a href="#">Mis compras</a>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
+                <strong style="display: block; margin-bottom: 10px; color: #333;">Nuestro Equipo</strong>
+                <a href="portafolio/dev1/index.html">Felipe Narvaes</a>
+                <a href="portafolio/dev2/index.html">Fernando Rosero</a>
+                <a href="portafolio/dev3/index.html">Nicol Muñoz</a>
+                <a href="portafolio/dev4/index.html">Yeraldin Araujo</a>
+            </div>
+        </div>
+    </nav>
+     <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <button class="carousel-btn prev" id="prevBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+            
+            <div class="carousel-slides">
+                <div class="carousel-slide active" style="background-image: url('img/img1.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img2.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img3.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img4.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img5.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+            </div>
+
+            <button class="carousel-btn next" id="nextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+            </button>
+
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
+    <!-- Benefits Section -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-scroll-container">
+                <button class="benefits-scroll-btn prev" id="benefitsPrev">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="#333"/>
+                    </svg>
+                </button>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Caja -->
+                                <rect x="14" y="20" width="20" height="16" rx="1" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <path d="M14 24 L24 28 L34 24" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <line x1="24" y1="28" x2="24" y2="36" stroke="#333" stroke-width="1.5"/>
+                                <!-- Tapa de la caja -->
+                                <path d="M14 20 L24 16 L34 20" stroke="#333" stroke-width="1.5" fill="#FFE600"/>
+                                <!-- Regalo/moño -->
+                                <circle cx="18" cy="14" r="2.5" fill="#FFE600"/>
+                                <circle cx="22" cy="14" r="2.5" fill="#FFE600"/>
+                                <rect x="19" y="14" width="2" height="6" fill="#FFE600"/>
+                            </svg>
+                        </div>
+                        <h3>Envío gratis</h3>
+                        <p>Benefíciate por ser tu primera compra.</p>
+                        <a href="#" class="benefit-link">Mostrar productos</a>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Carpeta/Cuenta -->
+                                <rect x="12" y="18" width="24" height="16" rx="2" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <path d="M12 22 L36 22" stroke="#333" stroke-width="1.5"/>
+                                <rect x="12" y="18" width="10" height="4" rx="1" fill="#FFE600"/>
+                                <!-- Persona -->
+                                <circle cx="24" cy="28" r="3.5" stroke="#333" stroke-width="1.5" fill="#FFE600"/>
+                                <path d="M18 34 Q18 30 24 30 Q30 30 30 34" stroke="#333" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Ingresa a tu cuenta</h3>
+                        <p>Disfruta de ofertas y compra sin límites.</p>
+                        <a href="#" class="benefit-link">Ingresar a tu cuenta</a>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Sobre -->
+                                <rect x="12" y="16" width="24" height="18" rx="1.5" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <path d="M12 16 L24 26 L36 16" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <path d="M12 34 L20 26" stroke="#333" stroke-width="1.5"/>
+                                <path d="M36 34 L28 26" stroke="#333" stroke-width="1.5"/>
+                                <!-- Pin de ubicación -->
+                                <circle cx="28" cy="22" r="5" fill="#FFE600" stroke="#333" stroke-width="1.5"/>
+                                <circle cx="28" cy="22" r="2" fill="#333"/>
+                                <path d="M28 27 L28 30" stroke="#333" stroke-width="1.5"/>
+                            </svg>
+                        </div>
+                        <h3>Ingresa tu ubicación</h3>
+                        <p>Consulta costos y tiempos de entrega.</p>
+                        <a href="#" class="benefit-link">Ingresar ubicación</a>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Billetera -->
+                                <rect x="14" y="20" width="20" height="14" rx="2" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <rect x="14" y="20" width="20" height="5" rx="2" fill="#FFE600"/>
+                                <line x1="18" y1="28" x2="22" y2="28" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="18" y1="31" x2="26" y2="31" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+                                <!-- Detalle de cierre -->
+                                <circle cx="30" cy="27" r="1.5" fill="#333"/>
+                            </svg>
+                        </div>
+                        <h3>Medios de pago</h3>
+                        <p>Paga tus compras de forma rápida y segura.</p>
+                        <a href="#" class="benefit-link">Conocer medios de pago</a>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Moneda/Precio -->
+                                <circle cx="24" cy="24" r="10" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <circle cx="24" cy="24" r="7" fill="#FFE600"/>
+                                <text x="24" y="29" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">$</text>
+                                <!-- Líneas de precio bajo -->
+                                <line x1="16" y1="14" x2="19" y2="17" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="32" y1="14" x2="29" y2="17" stroke="#333" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Menos de $40.000</h3>
+                        <p>Descubre productos con precios bajos.</p>
+                        <a href="#" class="benefit-link">Mostrar productos</a>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <!-- Bolsas de compras -->
+                                <rect x="14" y="18" width="10" height="14" rx="1" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <path d="M17 18 Q17 14 19 14 Q21 14 21 18" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <rect x="24" y="16" width="10" height="16" rx="1" stroke="#333" stroke-width="1.5" fill="#FFE600"/>
+                                <path d="M27 16 Q27 12 29 12 Q31 12 31 16" stroke="#333" stroke-width="1.5" fill="none"/>
+                                <!-- Estrella de tendencia -->
+                                <path d="M29 24 L30 26 L32 26 L30.5 27.5 L31 29.5 L29 28 L27 29.5 L27.5 27.5 L26 26 L28 26 Z" fill="#333"/>
+                            </svg>
+                        </div>
+                        <h3>Más vendidos</h3>
+                        <p>Explora los productos que son tendencia.</p>
+                        <a href="#" class="benefit-link">Ir a Más vendidos</a>
+                    </div>
+                </div>
+                
+                <button class="benefits-scroll-btn next" id="benefitsNext">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" fill="#333"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banners -->
+    <section class="promo-banners">
+        <div class="container">
+            <div class="promo-grid">
+                <!-- Grupo 1: Amarillo + 70OFF (sin espacio entre ellos) -->
+                <div class="promo-group">
+                    <div class="promo-banner-card yellow">
+                        <div class="promo-content">
+                            <span class="promo-tag">GRANDES REBAJAS</span>
+                            <h3 class="promo-title">TODO A PRECIO DE<br>LIQUIDACIÓN</h3>
+                            <a href="#" class="promo-btn yellow-btn">Comprar aquí</a>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-banner-card red">
+                        <img src="img/70off.png" alt="70% OFF" class="promo-image">
+                    </div>
+                </div>
+                
+                <!-- Grupo 2: Morado + Top Marcas (sin espacio entre ellos) -->
+                <div class="promo-group">
+                    <div class="promo-banner-card purple">
+                        <div class="promo-content">
+                            <span class="promo-tag-white">DIRECTO DESDE USA</span>
+                            <h3 class="promo-title-white">PAGA MENOS EN<br>TOP MARCAS</h3>
+                            <a href="#" class="promo-btn purple-btn">Compra ahora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="promo-banner-card image-card">
+                        <img src="img/topmarcas.png" alt="Top Marcas" class="promo-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers-section" id="ofertas">
+        <div class="container">
+            <div class="offers-wrapper">
+                <!-- Oferta del día -->
+                <div class="deal-of-day">
+                    <div class="deal-card">
+                        <h2 class="deal-title">Oferta del día</h2>
+                        <div class="deal-content">
+                            <div class="deal-image">
+                                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Almohada Emma Diamond Degree">
+                            </div>
+                            <div class="deal-info">
+                                <h3 class="deal-product-title">Almohada Emma Diamond Degree | Memory Foam | 70x50cm Blanco</h3>
+                                <div class="deal-pricing">
+                                    <span class="deal-price-before">$ 535.990</span>
+                                    <div class="deal-price-main">
+                                        <span class="deal-price-now">$ 238.500</span>
+                                        <span class="deal-discount">55% OFF</span>
+                                    </div>
+                                    <p class="deal-installments">6 cuotas de $ 39.750 con 0% interés</p>
+                                    <p class="deal-shipping">Envío gratis <span class="deal-shipping-detail">por ser tu primera compra</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ofertas -->
+                <div class="offers-carousel">
+                    <div class="offers-slider-wrapper">
+                        <div class="offers-header">
+                            <h2 class="offers-title">Ofertas</h2>
+                            <a href="#ofertas" class="see-all-link">Mostrar todas las ofertas</a>
+                        </div>
+                        <button class="offers-scroll-btn prev" id="offersPrev">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M12.5 15L7.5 10L12.5 5" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="offers-scroll">
+                            <div class="offer-card">
+                                <div class="offer-image">
+                                    <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=200&h=200&fit=crop" alt="Maletero">
+                                </div>
+                                <h3 class="offer-title">Maletero Cuadrado Dt1 36 Lt Black Color Negro</h3>
+                                <div class="offer-price">
+                                    <span class="price-before">$ 240.000</span>
+                                    <div class="price-group">
+                                        <span class="price-now">$ 134.467</span>
+                                        <span class="discount-badge">43% OFF</span>
+                                    </div>
+                                </div>
+                                <p class="offer-installments">3 cuotas de $ 44.822 con 0% interés</p>
+                                <p class="offer-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                            </div>
+
+                            <div class="offer-card">
+                                <div class="offer-image">
+                                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=200&h=200&fit=crop" alt="Tapete Perro">
+                                </div>
+                                <h3 class="offer-title">Tapete Absorbente Perro 60x60 Duke 6 Capas...</h3>
+                                <div class="offer-price">
+                                    <span class="price-before">$ 130.000</span>
+                                    <div class="price-group">
+                                        <span class="price-now">$ 114.900</span>
+                                        <span class="discount-badge">17% OFF</span>
+                                    </div>
+                                </div>
+                                <p class="offer-installments">3 cuotas de $ 38.300 con 0% interés</p>
+                                <p class="offer-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                            </div>
+
+                            <div class="offer-card">
+                                <div class="offer-image">
+                                    <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=200&h=200&fit=crop" alt="Termo Botella">
+                                </div>
+                                <h3 class="offer-title">Termo Botella Agua Termica Acero Inoxidable Buffer...</h3>
+                                <div class="offer-price">
+                                    <span class="price-before">$ 109.000</span>
+                                    <div class="price-group">
+                                        <span class="price-now">$ 74.990</span>
+                                        <span class="discount-badge">31% OFF</span>
+                                    </div>
+                                </div>
+                                <p class="offer-installments">3 cuotas de $ 24.997 con 0% interés</p>
+                                <p class="offer-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                            </div>
+
+                            <div class="offer-card">
+                                <div class="offer-image">
+                                    <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=200&h=200&fit=crop" alt="Impermeable">
+                                </div>
+                                <h3 class="offer-title">Impermeable Dt1 New Street</h3>
+                                <div class="offer-price">
+                                    <span class="price-before">$ 230.000</span>
+                                    <div class="price-group">
+                                        <span class="price-now">$ 184.409</span>
+                                        <span class="discount-badge">19% OFF</span>
+                                    </div>
+                                </div>
+                                <p class="offer-installments">3 cuotas de $ 61.470 con 0% interés</p>
+                                <p class="offer-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                            </div>
+
+                            <div class="offer-card">
+                                <div class="offer-image">
+                                    <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&h=200&fit=crop" alt="Smartwatch">
+                                </div>
+                                <h3 class="offer-title">Smartwatch Reloj Inteligente Deportivo Bluetooth...</h3>
+                                <div class="offer-price">
+                                    <span class="price-before">$ 450.000</span>
+                                    <div class="price-group">
+                                        <span class="price-now">$ 189.900</span>
+                                        <span class="discount-badge">58% OFF</span>
+                                    </div>
+                                </div>
+                                <p class="offer-installments">6 cuotas de $ 31.650 con 0% interés</p>
+                                <p class="offer-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                            </div>
+                        </div>
+                        
+                        <button class="offers-scroll-btn next" id="offersNext">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers Section -->
+    <section class="best-sellers-section">
+        <div class="container">
+            <div class="best-sellers-wrapper">
+                <div class="best-sellers-header">
+                    <h2 class="best-sellers-title">Más vendidos de la semana en Tarjetas</h2>
+                    <a href="#" class="see-more-link">Ir a Más vendidos</a>
+                </div>
+                
+                <div class="best-sellers-slider-wrapper">
+                    <button class="best-sellers-scroll-btn prev" id="bestSellersPrev">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M12.5 15L7.5 10L12.5 5" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="best-sellers-scroll">
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=200&h=200&fit=crop" alt="Capturadora HDMI">
+                            </div>
+                            <h3 class="best-seller-title">Capturadora De Video Externa Selpa Hd Hdmi...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-now">$ 27.077</span>
+                            </div>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=200&h=200&fit=crop" alt="Capturadora USB">
+                            </div>
+                            <h3 class="best-seller-title">Capturadora Usb Video Audio Captura Vhs Dvd...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-now">$ 69.990</span>
+                            </div>
+                            <p class="best-seller-installments">3 cuotas de $ 23.330 con 0% interés</p>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=200&h=200&fit=crop" alt="Capturadora Portátil">
+                            </div>
+                            <h3 class="best-seller-title">Capturadora De Video Externa Netmak Hdmi-cap...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-now">$ 24.530</span>
+                            </div>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1591405351990-4726e331f141?w=200&h=200&fit=crop" alt="Tarjeta de Video AMD">
+                            </div>
+                            <h3 class="best-seller-title">Tarjeta De Video Amd Asrock Challenger Oc...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-before">$ 2.355.000</span>
+                                <div class="price-group">
+                                    <span class="price-now">$ 2.209.900</span>
+                                    <span class="discount-badge">6% OFF</span>
+                                </div>
+                            </div>
+                            <p class="best-seller-installments">9 cuotas de $ 245.544 con 0% interés</p>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=200&h=200&fit=crop" alt="Tarjeta Captura USB">
+                            </div>
+                            <h3 class="best-seller-title">Tarjeta De Captura De Video Usb Easycap...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-now">$ 23.000</span>
+                            </div>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?w=200&h=200&fit=crop" alt="Placa Madre Gigabyte">
+                            </div>
+                            <h3 class="best-seller-title">Placa Madre Gigabyte B550mk Ddr4 Am4 Forma...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-before">$ 485.090</span>
+                                <div class="price-group">
+                                    <span class="price-now">$ 379.150</span>
+                                    <span class="discount-badge">22% OFF</span>
+                                </div>
+                            </div>
+                            <p class="best-seller-installments">3 cuotas de $ 126.383 con 0% interés</p>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+
+                        <div class="best-seller-card">
+                            <div class="best-seller-image">
+                                <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=200&h=200&fit=crop" alt="Tarjeta Gráfica">
+                            </div>
+                            <h3 class="best-seller-title">Tarjeta De Video Nvidia Geforce Rtx 3060...</h3>
+                            <div class="best-seller-price">
+                                <span class="price-before">$ 1.850.000</span>
+                                <div class="price-group">
+                                    <span class="price-now">$ 1.599.900</span>
+                                    <span class="discount-badge">13% OFF</span>
+                                </div>
+                            </div>
+                            <p class="best-seller-installments">12 cuotas de $ 133.325 con 0% interés</p>
+                            <p class="best-seller-shipping">Envío gratis <span>por ser tu primera compra</span></p>
+                        </div>
+                    </div>
+                    
+                    <button class="best-sellers-scroll-btn next" id="bestSellersNext">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="#333" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Searches -->
+    <section class="popular-searches">
+        <div class="container">
+            <h2>Productos más buscados</h2>
+            <div class="search-products">
+                <a href="#">Air Fryer</a>
+                <span class="separator">-</span>
+                <a href="#">Aire Acondicionado</a>
+                <span class="separator">-</span>
+                <a href="#">Aire Acondicionado Portátil</a>
+                <span class="separator">-</span>
+                <a href="#">Airpods</a>
+                <span class="separator">-</span>
+                <a href="#">Alexa</a>
+                <span class="separator">-</span>
+                <a href="#">Apple TV</a>
+                <span class="separator">-</span>
+                <a href="#">Apple Watch</a>
+                <span class="separator">-</span>
+                <a href="#">Audífonos</a>
+                <span class="separator">-</span>
+                <a href="#">Audífonos Inalámbricos</a>
+                <span class="separator">-</span>
+                <a href="#">Escritorio</a>
+                <span class="separator">-</span>
+                <a href="#">Gps</a>
+                <span class="separator">-</span>
+                <a href="#">Honor</a>
+                <span class="separator">-</span>
+                <a href="#">Huawei</a>
+                <span class="separator">-</span>
+                <a href="#">Ipad</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone X</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 11 Pro</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 12</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 12 Pro</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 12 Pro Max</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 13 Pro</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 16</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 16 Plus</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 16 Pro</a>
+                <span class="separator">-</span>
+                <a href="#">Iphone 16 Pro Max</a>
+                <span class="separator">-</span>
+                <a href="#">Jbl</a>
+                <span class="separator">-</span>
+                <a href="#">Lavadora</a>
+                <span class="separator">-</span>
+                <a href="#">Lenovo</a>
+                <span class="separator">-</span>
+                <a href="#">Motorola</a>
+                <span class="separator">-</span>
+                <a href="#">Nevera</a>
+                <span class="separator">-</span>
+                <a href="#">Nintendo</a>
+                <span class="separator">-</span>
+                <a href="#">Nintendo Switch</a>
+                <span class="separator">-</span>
+                <a href="#">Oppo Reno 7</a>
+                <span class="separator">-</span>
+                <a href="#">Playstation 5</a>
+                <span class="separator">-</span>
+                <a href="#">Redmi</a>
+                <span class="separator">-</span>
+                <a href="#">Redmi Note 9</a>
+                <span class="separator">-</span>
+                <a href="#">Reloj Inteligente</a>
+                <span class="separator">-</span>
+                <a href="#">Roku</a>
+                <span class="separator">-</span>
+                <a href="#">S23 Ultra</a>
+                <span class="separator">-</span>
+                <a href="#">Samsung</a>
+                <span class="separator">-</span>
+                <a href="#">Samsung A32</a>
+                <span class="separator">-</span>
+                <a href="#">Samsung A54</a>
+                <span class="separator">-</span>
+                <a href="#">Samsung S21</a>
+                <span class="separator">-</span>
+                <a href="#">Samsung S24 Ultra</a>
+                <span class="separator">-</span>
+                <a href="#">Silla Gamer</a>
+                <span class="separator">-</span>
+                <a href="#">Smartwatch</a>
+                <span class="separator">-</span>
+                <a href="#">Tablet</a>
+                <span class="separator">-</span>
+                <a href="#">Teclado</a>
+                <span class="separator">-</span>
+                <a href="#">Ventiladores</a>
+                <span class="separator">-</span>
+                <a href="#">Webcam</a>
+                <span class="separator">-</span>
+                <a href="#">Xbox</a>
+                <span class="separator">-</span>
+                <a href="#">Xbox Series S</a>
+                <span class="separator">-</span>
+                <a href="#">Xbox Series X</a>
+                <span class="separator">-</span>
+                <a href="#">Xiaomi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alphabetical Search -->
+    <section class="alphabetical-search">
+        <div class="container">
+            <h2>Buscar productos por letra inicial</h2>
+            <div class="alphabet-links">
+                <a href="#">A</a>
+                <span>-</span>
+                <a href="#">B</a>
+                <span>-</span>
+                <a href="#">C</a>
+                <span>-</span>
+                <a href="#">D</a>
+                <span>-</span>
+                <a href="#">E</a>
+                <span>-</span>
+                <a href="#">F</a>
+                <span>-</span>
+                <a href="#">G</a>
+                <span>-</span>
+                <a href="#">H</a>
+                <span>-</span>
+                <a href="#">I</a>
+                <span>-</span>
+                <a href="#">J</a>
+                <span>-</span>
+                <a href="#">K</a>
+                <span>-</span>
+                <a href="#">L</a>
+                <span>-</span>
+                <a href="#">M</a>
+                <span>-</span>
+                <a href="#">N</a>
+                <span>-</span>
+                <a href="#">O</a>
+                <span>-</span>
+                <a href="#">P</a>
+                <span>-</span>
+                <a href="#">Q</a>
+                <span>-</span>
+                <a href="#">R</a>
+                <span>-</span>
+                <a href="#">S</a>
+                <span>-</span>
+                <a href="#">T</a>
+                <span>-</span>
+                <a href="#">U</a>
+                <span>-</span>
+                <a href="#">V</a>
+                <span>-</span>
+                <a href="#">W</a>
+                <span>-</span>
+                <a href="#">X</a>
+                <span>-</span>
+                <a href="#">Y</a>
+                <span>-</span>
+                <a href="#">Z</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Methods Section -->
+    <section class="payment-methods">
+        <div class="container">
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <rect x="10" y="20" width="40" height="25" rx="2" stroke="#009EE3" stroke-width="2" fill="none"/>
+                            <rect x="10" y="25" width="40" height="5" fill="#009EE3"/>
+                        </svg>
+                    </div>
+                    <h3>Paga con tarjeta o en efectivo</h3>
+                    <p>Con Mercado Pago, paga en cuotas y aprovecha la comodidad de financiación que te da tu banco, o hazlo con efectivo en puntos de pago. ¡Y siempre es seguro!</p>
+                    <a href="#" class="payment-link">Cómo pagar con Mercado Pago</a>
+                </div>
+
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M30 15L35 25H25L30 15Z" fill="#009EE3"/>
+                            <rect x="20" y="25" width="20" height="15" stroke="#009EE3" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Envío gratis por ser tu primera compra</h3>
+                    <p>Aprovecha este beneficio en millones de productos seleccionados.</p>
+                    <a href="#" class="payment-link">Conocer más</a>
+                </div>
+
+                <div class="payment-card">
+                    <div class="payment-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+                            <path d="M30 15L25 25L30 35L35 25L30 15Z" stroke="#009EE3" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="5" fill="#009EE3"/>
+                        </svg>
+                    </div>
+                    <h3>Seguridad, de principio a fin</h3>
+                    <p>¿No te gusta? ¡Devuélvelo! En Mercado Libre, no hay nada que no puedas hacer, porque estás siempre protegido.</p>
+                    <a href="#" class="payment-link">Cómo te protegemos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Trabaja con nosotros</h4>
+                    <a href="#">Términos y condiciones</a>
+                    <a href="#">Promociones</a>
+                    <a href="#">Cómo cuidamos tu privacidad</a>
+                    <a href="#">Accesibilidad</a>
+                    <a href="#">Ayuda / PQR</a>
+                    <a href="#">Navidad</a>
+                    <a href="#">mercado.go.co</a>
+                </div>
+                <div class="footer-section">
+                    <p>Copyright © 1999-2026 Mercado Libre Colombia LTDA.</p>
+                    <p>Carrera 17A #93-09 Piso 3, Bogotá D.C., Colombia</p>
+                </div>
+                <div class="footer-badges">
+                    <img src="https://sedeelectronica.sic.gov.co/themes/custom/sictheme/LogoSIC.webp" alt="Industria y Comercio">
+                    <img src="https://via.placeholder.com/100x50/FFFFFF/333333?text=PQRS" alt="PQRS">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <script src="js/main.js"></script>
+    
+
+</body>
+</html>
