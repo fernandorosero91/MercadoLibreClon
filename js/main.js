@@ -168,6 +168,43 @@ window.addEventListener('load', function() {
     console.log('Carousel initialized successfully!');
 });
 
+// Benefits scroll functionality
+window.addEventListener('load', function() {
+    const benefitsGrid = document.querySelector('.benefits-grid');
+    const prevBtn = document.getElementById('benefitsPrev');
+    const nextBtn = document.getElementById('benefitsNext');
+    
+    if (benefitsGrid && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', function() {
+            benefitsGrid.scrollBy({
+                left: -280,
+                behavior: 'smooth'
+            });
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            benefitsGrid.scrollBy({
+                left: 280,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Hide/show buttons based on scroll position
+        function updateScrollButtons() {
+            const scrollLeft = benefitsGrid.scrollLeft;
+            const maxScroll = benefitsGrid.scrollWidth - benefitsGrid.clientWidth;
+            
+            prevBtn.sstyle.opacity = scrollLeft > 0 ? '1' : '0.3';
+            prevBtn.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none';
+            
+            nextBtn.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0.3';
+            nextBtn.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+        }
+        
+        benefitsGrid.addEventListener('scroll', updateScrollButtons);
+        updateScrollButtons();
+    }
+});
 
 // Offers scroll functionality
 window.addEventListener('load', function() {
@@ -412,5 +449,59 @@ window.addEventListener('load', function() {
                 }
             }
         });
+    }
+});
+
+// Smooth scroll functionality - Execute after DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Setting up smooth scroll...');
+    
+    // Handle all anchor links with smooth scroll
+    document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) {
+            const href = link.getAttribute('href');
+            console.log('Clicked link with href:', href);
+            
+            if (href && href !== '#') {
+                e.preventDefault();
+                const targetId = href.substring(1); // Remove the #
+                const target = document.getElementById(targetId);
+                
+                console.log('Looking for element with id:', targetId);
+                console.log('Found target:', target);
+                
+                if (target) {
+                    console.log('Scrolling to target...');
+                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    console.error('Target element not found:', targetId);
+                }
+            }
+        }
+    });
+    
+    console.log('Smooth scroll setup complete');
+});
+
+// Handle cart icon click
+document.addEventListener('click', function(e) {
+    if (e.target.closest('.cart-icon')) {
+        e.preventDefault();
+        alert('Carrito de compras - Funcionalidad por implementar');
+    }
+});
+
+// Handle offer card clicks
+document.addEventListener('click', function(e) {
+    const offerCard = e.target.closest('.offer-card');
+    if (offerCard && !e.target.closest('a')) {
+        console.log('Producto seleccionado');
     }
 });
