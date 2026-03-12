@@ -74,7 +74,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Mobile Navigation -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
     <nav class="mobile-nav" id="mobileNav">
@@ -102,5 +102,51 @@
             </div>
         </div>
     </nav>
+     <!-- Hero Carousel Section -->
+    <section class="hero-carousel">
+        <div class="carousel-container">
+            <button class="carousel-btn prev" id="prevBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                </svg>
+            </button>
+            
+            <div class="carousel-slides">
+                <div class="carousel-slide active" style="background-image: url('img/img1.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img2.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img3.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img4.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+
+                <div class="carousel-slide" style="background-image: url('img/img5.png');">
+                    <div class="carousel-overlay"></div>
+                </div>
+            </div>
+
+            <button class="carousel-btn next" id="nextBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                </svg>
+            </button>
+
+            <div class="carousel-indicators">
+                <span class="indicator active" data-slide="0"></span>
+                <span class="indicator" data-slide="1"></span>
+                <span class="indicator" data-slide="2"></span>
+                <span class="indicator" data-slide="3"></span>
+                <span class="indicator" data-slide="4"></span>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
